@@ -44,6 +44,14 @@ Die Machine-Learning- und Bewegungsfunktionen sind keine vollständige Eigenentw
 
 Open Duck Mini ist unter der Apache License 2.0 veröffentlicht.
 
+## Bewegung und Machine Learning
+
+Die Laufbewegungen des Roboters basieren auf der bestehenden Bewegungs-Policy und Runtime des Projekts [Open Duck Mini v2](https://github.com/apirrone/Open_Duck_Mini).
+
+Das verwendete Machine-Learning-Modell wurde nicht im Rahmen dieses Semesterprojekts von mir trainiert. Für die Bewegungssteuerung nutze ich die vom Open-Duck-Mini-Projekt bereitgestellten Programme und Modelle.
+
+Dieses Repository enthält hauptsächlich meinen eigenen Code für den Sprachdialog, die Persönlichkeit von Lumi und zusätzliche Motorentests. Die ursprünglichen Open-Duck-Mini-Dateien werden nicht erneut veröffentlicht, sondern über das jeweilige Original-Repository eingebunden beziehungsweise von dort bezogen.
+
 ## Sicherheit
 
 API-Schlüssel und andere Zugangsdaten werden nicht im Repository gespeichert. Die Datei `api_key_folder.json` ist von der Versionsverwaltung ausgeschlossen.
