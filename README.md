@@ -46,7 +46,7 @@ Open Duck Mini ist unter der Apache License 2.0 veröffentlicht.
 
 ## Sicherheit
 
-API-Schlüssel und andere Zugangsdaten werden nicht im Repository gespeichert. Die Datei `api_key_folder.json` muss lokal bleiben und ist von der Versionsverwaltung ausgeschlossen.
+API-Schlüssel und andere Zugangsdaten werden nicht im Repository gespeichert. Die Datei `api_key_folder.json` ist von der Versionsverwaltung ausgeschlossen.
 
 ## Lizenz
 
