@@ -45,7 +45,6 @@ Die bisher bestätigten Werte befinden sich in:
 docs/servo_offsets_partial_2026-09-28.md
 ```
 
-Die Werte des rechten Beins sind noch nicht vollständig kalibriert. Der Roboter darf deshalb noch nicht mit dem vollständigen Laufprogramm gestartet werden.
 
 ### Hinweis zu TNKR
 
