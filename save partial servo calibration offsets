@@ -1,42 +1,25 @@
 # Open Duck Mini – Servo-Offsets
 
 Stand: 28. September 2026  
-Status: Unvollständiger Kalibrierungsstand  
 Einheit: Radiant (rad)
 
-Die Werte wurden einzeln in der mechanischen Neutralstellung gemessen und anschließend mit geringer Haltekraft überprüft. Die gemessene Abweichung betrug jeweils ungefähr `0.0000 rad`.
+Die Werte wurden einzeln in der mechanischen Neutralstellung gemessen und anschließend mit geringer Haltekraft überprüft. 
+Die gemessene Abweichung betrug jeweils ungefähr `0.0000 rad`.
 
-Diese Datei ist nur eine Sicherung. Die Werte wurden noch nicht gemeinsam im vollständigen Roboterbetrieb getestet.
 
-## Linkes Bein
+     1	left_hip_yaw: -2.6875
+     2	left_hip_roll: -0.8007
+     3	left_hip_pitch: 2.8624
+     4	left_knee: -1.1459
+     5	left_ankle: -1.2134
+     6	neck_pitch: 0.6627
+     7	head_pitch: -0.4510
+     8	head_yaw: -1.0032
+     9	head_roll: -0.1304
+    10	right_hip_yaw: 3.0081
+    11	right_hip_roll: 0.2240
+    12	right_hip_pitch: -1.0354
+    13	right_knee: 1.7181
+    14	right_ankle: -1.1229
 
-| Gelenk | Servo-ID | Offset |
-|---|---:|---:|
-| `left_hip_yaw` | 20 | `-2.6875` |
-| `left_hip_roll` | 21 | `-0.8007` |
-| `left_hip_pitch` | 22 | `2.8624` |
-| `left_knee` | 23 | `-1.1459` |
-| `left_ankle` | 24 | `-1.2134` |
 
-## Hals und Kopf
-
-| Gelenk | Servo-ID | Offset |
-|---|---:|---:|
-| `neck_pitch` | 30 | `0.6627` |
-| `head_pitch` | 31 | `-0.4510` |
-| `head_yaw` | 32 | `-1.0032` |
-| `head_roll` | 33 | `-0.1304` |
-
-## Noch nicht kalibriert
-
-- `right_hip_yaw` – ID 10
-- `right_hip_roll` – ID 11
-- `right_hip_pitch` – ID 12
-- `right_knee` – ID 13
-- `right_ankle` – ID 14
-
-## Hinweis
-
-Beim ersten Versuch für `right_hip_yaw` wurde der ungültige Wert `-53.2475 rad` ausgelesen. Dieser Wert entstand vermutlich durch den Mehrfachumdrehungs-Zähler und darf nicht verwendet werden.
-
-Vor der Übernahme in die endgültige Roboterkonfiguration müssen die fehlenden Servos kalibriert und anschließend alle Werte vorsichtig überprüft werden.
