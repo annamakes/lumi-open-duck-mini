@@ -1,61 +1,54 @@
-# Lumi Open Duck Mini
+## Software und Dokumentation
 
-Lumi ist ein sozialer Begleitroboter, der im Rahmen des Semesterprojekts „Automatisierte Systeme im Design“ entwickelt wurde. Das Projekt basiert auf dem Open-Source-Projekt [Open Duck Mini v2](https://github.com/apirrone/Open_Duck_Mini).
+Dieser Roboter basiert auf dem ursprünglichen **Open Duck Mini V2** von [apirrone](https://github.com/apirrone/Open_Duck_Mini).
 
-Ziel des Projekts ist es, zu untersuchen, wie ein kleiner Roboter durch Sprache, Bewegung und eine wiedererkennbare Persönlichkeit als soziale Präsenz im Alltag wahrgenommen werden kann.
+Für den mechanischen Aufbau, die Verkabelung und die strukturierte Schritt-für-Schritt-Anleitung wurde die visuell aufbereitete [TNKR-Anleitung für den Open Duck Mini](https://tnkr.ai/builds/setup/open-duck-mini) verwendet.
 
-## Aktueller Entwicklungsstand
+### Runtime
 
-Der aktuelle Prototyp umfasst:
+Für die Softwareinstallation wird der TNKR-Fork der Open-Duck-Runtime verwendet:
 
-- gedruckte mechanische Komponenten
-- Aufnahme deutscher Sprache über ein Mikrofon
-- Umwandlung der Sprache in Text
-- Dialog mit einem Sprachmodell
-- einen eigenen System-Prompt für Lumis Persönlichkeit
-- Textausgabe der Antworten in der Konsole
+- [TNKR Open Duck Mini Runtime](https://github.com/tnkrai/Open_Duck_Mini_Runtime/tree/v2)
+- Upstream: [apirrone/Open_Duck_Mini_Runtime](https://github.com/apirrone/Open_Duck_Mini_Runtime/tree/v2)
 
-Noch nicht vollständig integriert sind:
+Der TNKR-Fork verwendet weiterhin die ursprüngliche Open-Duck-Runtime, die Servo-IDs, Motorskripte und das ONNX-Laufmodell. Zusätzlich stellt er eine automatisierte Installation, Systemdienste, Tests und eine Schnittstelle für TNKR Studio bereit.
 
-- Audioausgabe am Roboter
-- Motorsteuerung und Laufbewegungen
-- Sensorik und Hinderniserkennung
-- dauerhaftes Gedächtnis
-- Verbindung zwischen Dialog und Bewegung
+Installation auf dem Raspberry Pi:
 
-Das Repository dokumentiert einen frühen Lern- und Forschungsprototyp. Der Code ist nicht für einen produktiven Einsatz vorgesehen.
+```bash
+curl -sSL https://raw.githubusercontent.com/tnkrai/Open_Duck_Mini_Runtime/v2/scripts/setup.sh \
+  | bash -s -- --clean
+```
 
-## Eigene Erweiterungen
+### System
 
-Für dieses Semesterprojekt wurden folgende Bestandteile entwickelt:
+- Raspberry Pi Zero 2 W
+- 64-Bit-Betriebssystem
+- Hostname: `lumipi`
+- Benutzer: `anna`
+- Runtime-Verzeichnis: `~/Open_Duck_Mini_Runtime`
+- Servo-Controller: `/dev/ttyACM0`
+- IMU: BNO055, I²C-Adresse `0x28`
+- Servos: 14 × Feetech STS3215
 
-- deutscher Sprachdialog
-- Persönlichkeit und System-Prompt für Lumi
-- mikrofonbasierte Eingabe
-- Behandlung von Sprach- und Verbindungsfehlern
-- Dokumentation des Druck- und Entwicklungsprozesses
-- Konzept für die Verbindung von Dialog, Sensorik und Bewegung
+### Machine Learning
 
-## Open-Source-Grundlage
+Das Training der Laufbewegung findet nicht auf dem Raspberry Pi statt. Auf dem Pi wird lediglich die bereits trainierte ONNX-Policy durch die Open-Duck-Runtime ausgeführt.
 
-Open Duck Mini wurde von Antoine Pirrone und der Open-Duck-Mini-Community entwickelt. Aus dem Ausgangsprojekt wurden technische Konzepte, CAD- und Druckdateien sowie Ansätze für die Bewegungssteuerung und Machine-Learning-Policies verwendet.
+### Kalibrierungsstatus
 
-Die Machine-Learning- und Bewegungsfunktionen sind keine vollständige Eigenentwicklung. Die Herkunft übernommener Bestandteile wird in diesem Repository kenntlich gemacht.
+Die Servo-IDs wurden erfolgreich konfiguriert und erkannt. Die Gelenk-Offsets werden einzeln und mit geringer Haltekraft bestimmt, um hohe gleichzeitige Stromspitzen zu vermeiden.
 
-Open Duck Mini ist unter der Apache License 2.0 veröffentlicht.
+Die bisher bestätigten Werte befinden sich in:
 
-## Bewegung und Machine Learning
+```text
+docs/servo_offsets_partial_2026-09-28.md
+```
 
-Die Laufbewegungen des Roboters basieren auf der bestehenden Bewegungs-Policy und Runtime des Projekts [Open Duck Mini v2](https://github.com/apirrone/Open_Duck_Mini).
+Die Werte des rechten Beins sind noch nicht vollständig kalibriert. Der Roboter darf deshalb noch nicht mit dem vollständigen Laufprogramm gestartet werden.
 
-Das verwendete Machine-Learning-Modell wurde nicht im Rahmen dieses Semesterprojekts von mir trainiert. Für die Bewegungssteuerung nutze ich die vom Open-Duck-Mini-Projekt bereitgestellten Programme und Modelle.
+### Hinweis zu TNKR
 
-Dieses Repository enthält hauptsächlich meinen eigenen Code für den Sprachdialog, die Persönlichkeit von Lumi und zusätzliche Motorentests. Die ursprünglichen Open-Duck-Mini-Dateien werden nicht erneut veröffentlicht, sondern über das jeweilige Original-Repository eingebunden beziehungsweise von dort bezogen.
+Der TNKR-Fork ergänzt die ursprüngliche Runtime um Installations- und Verwaltungsfunktionen. Die Mechanik, Gelenkstruktur und grundlegende Motorsteuerung stammen weiterhin aus dem Open-Duck-Mini-Projekt.
 
-## Sicherheit
-
-API-Schlüssel und andere Zugangsdaten werden nicht im Repository gespeichert. Die Datei `api_key_folder.json` ist von der Versionsverwaltung ausgeschlossen.
-
-## Lizenz
-
-Die Lizenzinformationen befinden sich in der Datei `LICENSE`. Die Lizenz- und Urheberrechtshinweise übernommener Bestandteile bleiben erhalten.
+Die optionale anonyme TNKR-Telemetrie kann über `~/.tnkr-telemetry.json` deaktiviert werden.
