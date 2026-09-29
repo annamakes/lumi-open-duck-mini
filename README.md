@@ -126,6 +126,9 @@ Dieser baut auf der ursprünglichen Open-Duck-Runtime auf und ergänzt sie unter
 - eine Schnittstelle für TNKR Studio,
 - optionale anonyme Telemetrie.
 
+  Virtuelle Webseite für die Bedienbarkeit von Lumi
+- http://lumipi.local:8000/docs
+
 Die Mechanik, Servo-IDs und grundlegende Bewegungssteuerung bleiben dabei mit Open Duck Mini kompatibel.
 
 ## Installation auf dem Raspberry Pi
