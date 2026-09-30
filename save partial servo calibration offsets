@@ -23,3 +23,21 @@ Die gemessene Abweichung betrug jeweils ungefähr `0.0000 rad`.
     14	right_ankle: -1.1229
 
 
+Erlaubter Bereich: ±3.05 rad
+left_hip_yaw         Ziel=-2.6855  Reserve= 0.3645  OK
+left_hip_roll        Ziel=-0.7477  Reserve= 2.3023  OK
+left_hip_pitch       Ziel= 2.2324  Reserve= 0.8176  OK
+left_knee            Ziel= 0.2221  Reserve= 2.8279  OK
+left_ankle           Ziel=-1.9974  Reserve= 1.0526  OK
+neck_pitch           Ziel= 0.6627  Reserve= 2.3873  OK
+head_pitch           Ziel=-0.4510  Reserve= 2.5990  OK
+head_yaw             Ziel=-1.0032  Reserve= 2.0468  OK
+head_roll            Ziel=-0.1304  Reserve= 2.9196  OK
+right_hip_yaw        Ziel=-0.0030  Reserve= 3.0470  OK
+right_hip_roll       Ziel= 0.1590  Reserve= 2.8910  OK
+right_hip_pitch      Ziel=-0.4004  Reserve= 2.6496  OK
+right_knee           Ziel= 1.3790  Reserve= 1.6710  OK
+right_ankle          Ziel=-1.9189  Reserve= 1.1311  OK
+Ergebnis: Alle Zielpositionen liegen im erlaubten Bereich.
+
+
