@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# Kopfbewegung 
+# Code erstellt mit KI
 
 import argparse
 import json
